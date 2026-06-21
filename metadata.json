@@ -1,0 +1,6 @@
+{
+  "name": "SpaceHub - Kids Social Interactive Hub",
+  "description": "A collaborative interactive hub for kids under 16. Features peer profile sharing, safe educational video streams, joint adventure journaling with AI buddy mascots, pinned YouTube studies, reading corners, and a learning miniature arcade zone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
