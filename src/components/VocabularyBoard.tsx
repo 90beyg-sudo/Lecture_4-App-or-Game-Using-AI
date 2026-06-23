@@ -130,13 +130,19 @@ export const VocabularyBoard: React.FC<VocabularyBoardProps> = ({
   // Get localized subcategory label
   const getSubcategoryLabel = (catId: string) => {
     switch (catId) {
-      case 'science-space': return '🚀 Science & Space';
-      case 'math-tricks': return '🔢 Math Tricks';
+      case 'science-facts':
+      case 'science-space': return '🚀 Science Facts';
+      case 'math-puzzles':
+      case 'math-tricks': return '🔢 Math Puzzles';
       case 'animals-nature': return '🦁 Animals & Nature';
       case 'coding-basics': return '💻 Coding Basics';
-      case 'history-culture': return '🏛️ History & Culture';
-      case 'craft-diy': return '🎨 Craft & DIY';
-      case 'riddles': return '🧠 Lateral Riddles';
+      case 'history-lessons':
+      case 'history-culture': return '🏛️ History Lessons';
+      case 'craft-diy': return '✂️ Craft & DIY';
+      case 'jokes':
+      case 'riddles': return '🎈 Jokes & Riddles';
+      case 'games': return '🎮 Games & Puzzles';
+      case 'cartoons': return '🎨 Cartoons & Stories';
       case 'amazing-facts': return '✨ Science Trivia';
       default: return '🌟 General Core';
     }

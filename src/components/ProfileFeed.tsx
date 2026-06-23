@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { UserProfile, Video, Post } from '../types';
 import { AvatarSelector, AVATAR_OPTIONS, AvatarIcon } from './AvatarSelector';
 import { extractYoutubeId, generateShareUrl } from '../utils/sharing';
-import { PRESET_VIDEOS } from '../data/categories';
+import { PRESET_VIDEOS, CATEGORIES } from '../data/categories';
 import { 
   Camera, Edit, Share2, Plus, MessageSquare, Video as VideoIcon, 
   Trash2, Award, Sparkles, Smile, BookOpen, Clock, Heart, CheckCircle2, Copy, Play,
@@ -358,9 +358,17 @@ export const ProfileFeed: React.FC<ProfileFeedProps> = ({
   const [videoTitle, setVideoTitle] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
   const [videoCategory, setVideoCategory] = useState('education');
-  const [videoSubcategory, setVideoSubcategory] = useState('science-space');
+  const [videoSubcategory, setVideoSubcategory] = useState('science-facts');
   const [videoDesc, setVideoDesc] = useState('');
   const [videoError, setVideoError] = useState('');
+
+  const handleCategoryChange = (catId: string) => {
+    setVideoCategory(catId);
+    const catObj = CATEGORIES.find(c => c.id === catId);
+    if (catObj && catObj.subcategories.length > 0) {
+      setVideoSubcategory(catObj.subcategories[0].id);
+    }
+  };
 
   // Likes Tracking state (simulated interactive likes for visitor-engagement)
   const [postLikes, setPostLikes] = useState<Record<string, number>>({});
@@ -914,10 +922,12 @@ export const ProfileFeed: React.FC<ProfileFeedProps> = ({
                     onChange={(e) => setTempTopic(e.target.value)}
                     className="w-full text-xs p-3 border border-slate-200 rounded-xl bg-white focus:ring-1 focus:ring-indigo-505 focus:outline-none"
                   >
-                    <option value="science-space">🚀 Science & Space</option>
-                    <option value="math-tricks">🔢 Math Shortcuts</option>
-                    <option value="craft-diy">🎨 Craft & Paper Origami</option>
-                    <option value="riddles">🧠 Brain Teasers & Mystery Puzzles</option>
+                    <option value="science-facts">🚀 Science Facts</option>
+                    <option value="math-puzzles">🔢 Math Puzzles</option>
+                    <option value="history-lessons">🏛️ History Lessons</option>
+                    <option value="jokes">🎈 Jokes & Riddles</option>
+                    <option value="games">🎮 Games & Puzzles</option>
+                    <option value="cartoons">🎨 Cartoons & Stories</option>
                     <option value="animals-nature">🦁 Oceans & Animal Biology</option>
                     <option value="how-things-work">⚙️ Engineering & Physics</option>
                     <option value="tech-future">💻 AI & Modern Robotics</option>
@@ -1094,7 +1104,7 @@ export const ProfileFeed: React.FC<ProfileFeedProps> = ({
                       <select
                         id="video-category-select"
                         value={videoCategory}
-                        onChange={(e) => setVideoCategory(e.target.value)}
+                        onChange={(e) => handleCategoryChange(e.target.value)}
                         className="w-full text-xs p-2 border border-slate-200 rounded-lg bg-white"
                       >
                         <option value="education">🎓 Education</option>
@@ -1112,12 +1122,13 @@ export const ProfileFeed: React.FC<ProfileFeedProps> = ({
                         onChange={(e) => setVideoSubcategory(e.target.value)}
                         className="w-full text-xs p-2 border border-slate-200 rounded-lg bg-white"
                       >
-                        <option value="science-space">🚀 Science / Space</option>
-                        <option value="craft-diy">🖌️ Crafts / DIY</option>
-                        <option value="riddles">💡 Brain Riddles</option>
-                        <option value="animals-nature">🐾 Animals / Nature</option>
-                        <option value="how-things-work">⚙️ Engineering</option>
-                        <option value="safe-gaming">🎮 Safe Gaming</option>
+                        {CATEGORIES.find(c => c.id === videoCategory)?.subcategories.map(sub => (
+                          <option key={sub.id} value={sub.id}>
+                            {sub.emoji} {sub.title}
+                          </option>
+                        )) || (
+                          <option value="">No Topic Tag</option>
+                        )}
                       </select>
                     </div>
                   </div>

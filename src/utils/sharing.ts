@@ -69,7 +69,7 @@ export function decodeProfile(base64Str: string): UserProfile | null {
       displayName: parsed.name || 'Anonymous Learner',
       avatarUrl: parsed.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150',
       bio: parsed.bio || '',
-      favoriteTopic: parsed.topic || 'science-space',
+      favoriteTopic: parsed.topic || 'science-facts',
       xpPoints: typeof parsed.xp === 'number' ? parsed.xp : 120,
       badges: Array.isArray(parsed.badges) ? parsed.badges : [],
       addedVideos: Array.isArray(parsed.videos) ? parsed.videos.map((v: any) => ({

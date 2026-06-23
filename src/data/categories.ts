@@ -25,21 +25,21 @@ export const CATEGORIES: Category[] = [
     colorClass: 'from-blue-500 to-indigo-600',
     subcategories: [
       {
-        id: 'science-space',
-        title: 'Science & Space',
-        description: 'Explore stars, planets, molecules, and chemical reactions.',
+        id: 'science-facts',
+        title: 'Science Facts',
+        description: 'Explore stars, planets, chemical reactions, and physical constants.',
         emoji: '🚀'
       },
       {
-        id: 'math-tricks',
-        title: 'Math Tricks',
-        description: 'Discover fast mental calculation and cool number patterns.',
+        id: 'math-puzzles',
+        title: 'Math Puzzles',
+        description: 'Train your critical thinking with math, calculations, and patterns.',
         emoji: '🔢'
       },
       {
-        id: 'history-culture',
-        title: 'History & Cultures',
-        description: 'Travel back in time to ancient Egypt, Rome, and explore our world.',
+        id: 'history-lessons',
+        title: 'History Lessons',
+        description: 'Travel back in time to ancient civilizations and historic achievements.',
         emoji: '🏛️'
       },
       {
@@ -53,33 +53,33 @@ export const CATEGORIES: Category[] = [
   {
     id: 'fun',
     title: 'Fun Activities',
-    description: 'Hands-on DIY crafts, hilarious jokes, and mind-boggling riddles!',
+    description: 'Hands-on DIY crafts, hilarious jokes, and mind-boggling interactive games!',
     emoji: '🧩',
     colorClass: 'from-amber-400 to-orange-500',
     subcategories: [
       {
-        id: 'craft-diy',
-        title: 'Craft & DIY',
-        description: 'Step-by-step paper folding, painting, and cool kitchen experiments.',
-        emoji: '🎨'
-      },
-      {
-        id: 'riddles',
-        title: 'Interactive Riddles',
-        description: 'Train your brain with lateral-thinking questions and puzzles.',
-        emoji: '🧠'
-      },
-      {
-        id: 'kid-jokes',
-        title: 'Kid Jokes',
-        description: 'Silly puns, clean jokes, and funny skits that will make you giggle.',
+        id: 'jokes',
+        title: 'Jokes & Riddles',
+        description: 'Silly puns, clean kid jokes, and funny quick riddles that make you giggle.',
         emoji: '🎈'
       },
       {
-        id: 'amazing-facts',
-        title: 'Amazing Trivia',
-        description: 'Bizarre but true secrets of the universe that sound made up!',
-        emoji: '✨'
+        id: 'games',
+        title: 'Games & Puzzles',
+        description: 'Great board game hacks, interactive code games, and offline science play.',
+        emoji: '🎮'
+      },
+      {
+        id: 'cartoons',
+        title: 'Cartoons & Stories',
+        description: 'Safe animated short drawings, storytelling videos, and voice comics.',
+        emoji: '🎨'
+      },
+      {
+        id: 'craft-diy',
+        title: 'Craft & DIY',
+        description: 'Step-by-step paper folding, drawing, and cool kitchen science projects.',
+        emoji: '✂️'
       }
     ]
   },
@@ -139,7 +139,7 @@ export const CATEGORIES: Category[] = [
         id: 'safe-gaming',
         title: 'Safe Gaming Tips',
         description: 'Cool level builds, sandbox logic, and being a kind online gamer.',
-        emoji: '🎮'
+        emoji: '👾'
       },
       {
         id: 'talents',
@@ -158,7 +158,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: 'How Deep is the Ocean? (Animated Expedition)',
     youtubeId: 'ge7711-UInU',
     category: 'education',
-    subcategory: 'science-space',
+    subcategory: 'science-facts',
     description: 'A deep plunge down to the Mariana Trench. Discover what strange lifeforms survive at 36,000 feet below sea level.',
     createdAt: '2026-01-10T10:00:00.000Z'
   },
@@ -167,7 +167,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: 'Solar System 101 | National Geographic Kids',
     youtubeId: 'libKVRa01L8',
     category: 'education',
-    subcategory: 'science-space',
+    subcategory: 'science-facts',
     description: 'Check out the amazing planets orbiting our sun, from scorching Mercury to icy Neptune, and find out what makes the Earth so special.',
     createdAt: '2026-01-12T10:00:00.000Z'
   },
@@ -176,7 +176,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: 'Ancient Egypt: The Gift of the Nile',
     youtubeId: 'H7uF3vIsR14',
     category: 'education',
-    subcategory: 'history-culture',
+    subcategory: 'history-lessons',
     description: 'How did pharaohs live? What are pyramids really built for? Embark on an exciting journey down the historic River Nile.',
     createdAt: '2026-02-15T10:00:00.000Z'
   },
@@ -185,7 +185,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: 'Cool Mental Math Tricks for Super Speed Counting',
     youtubeId: '30qg89K_6M4',
     category: 'education',
-    subcategory: 'math-tricks',
+    subcategory: 'math-puzzles',
     description: 'Impress your teachers and friends with these ninja math techniques to multiply huge numbers and check answers in your head in seconds.',
     createdAt: '2026-03-20T10:00:00.000Z'
   },
@@ -205,7 +205,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: '10 Smart Brain Teasers and Lateral-Thinking Riddles',
     youtubeId: '6X_bZ8K9Z8U',
     category: 'fun',
-    subcategory: 'riddles',
+    subcategory: 'jokes',
     description: 'Can you solve these mystery puzzles? Pay attention to the secret details and try to answer before the timer counts down!',
     createdAt: '2026-04-18T10:00:00.000Z'
   },
@@ -214,7 +214,7 @@ export const PRESET_VIDEOS: Video[] = [
     title: 'The Funniest Science Puns and Jokes Explained',
     youtubeId: 'Y9jE64F8vN4',
     category: 'fun',
-    subcategory: 'kid-jokes',
+    subcategory: 'jokes',
     description: 'Why can you never trust an atom? Because they make up everything! Have fun listening to hilarious puns and learn the dry science behind them.',
     createdAt: '2026-05-01T10:00:00.000Z'
   },

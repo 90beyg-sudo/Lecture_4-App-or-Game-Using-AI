@@ -17,7 +17,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v1',
     word: 'Nebula',
-    category: 'science-space',
+    category: 'science-facts',
     meaning: 'An immense cloud of gas and dust in outer space, where new stars are born.',
     translations: {
       Spanish: 'Nebulosa: Una inmensa nube de gas y polvo en el espacio exterior, donde nacen nuevas estrellas.',
@@ -29,7 +29,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v2',
     word: 'Gravity',
-    category: 'science-space',
+    category: 'science-facts',
     meaning: 'The invisible force that pulls objects toward each other, like holding us to the ground.',
     translations: {
       Spanish: 'Gravedad: La fuerza invisible que atrae los objetos entre sí, como mantenernos en el suelo.',
@@ -41,11 +41,11 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v3',
     word: 'Asteroid',
-    category: 'science-space',
+    category: 'science-facts',
     meaning: 'A small rocky object that orbits the Sun, much smaller than a planet.',
     translations: {
       Spanish: 'Asteroide: Un pequeño objeto rocoso que orbita alrededor del Sol, mucho más pequeño que un planeta.',
-      French: 'Astéroïde: Un petit objet rocheux en orbite autour du Soleil, plus petit qu\'une planète.',
+      French: 'Astéroïde: Un petit objet rocheux en orbitu alour du Soleil, plus petit qu\'une planète.',
       German: 'Asteroid: Ein kleiner Gesteinsbrocken, der um die Sonne kreist, viel kleiner als ein Planet.'
     },
     funFact: 'Most asteroids reside in a giant ring called the Asteroid Belt!'
@@ -54,7 +54,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v4',
     word: 'Fraction',
-    category: 'math-tricks',
+    category: 'math-puzzles',
     meaning: 'A part of a whole, usually represented by one number over another (like 1/2 of a pizza).',
     translations: {
       Spanish: 'Fracción: Una parte de un todo, generalmente representada por un número sobre otro (como la mitad de una pizza).',
@@ -66,7 +66,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v5',
     word: 'Symmetry',
-    category: 'math-tricks',
+    category: 'math-puzzles',
     meaning: 'When one half of an object is a perfect mirror image of the other half.',
     translations: {
       Spanish: 'Simetría: Cuando una mitad de un objeto es una imagen de espejo perfecta de la otra mitad.',
@@ -141,7 +141,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v11',
     word: 'Hieroglyph',
-    category: 'history-culture',
+    category: 'history-lessons',
     meaning: 'A picture or symbol used in ancient writing, especially during ancient Egyptian times.',
     translations: {
       Spanish: 'Jeroglífico: Un dibujo o símbolo usado en la escritura antigua, especialmente en el antiguo Egipto.',
@@ -154,7 +154,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v12',
     word: 'Archeology',
-    category: 'history-culture',
+    category: 'history-lessons',
     meaning: 'The study of human history and prehistory through the excavation of ancient sites and artifacts.',
     translations: {
       Spanish: 'Arqueología: El estudio de la historia humana a través de la excavación de sitios antiguos y artefactos.',
@@ -180,7 +180,7 @@ export const VOCABULARY_WORDS: VocabWord[] = [
   {
     id: 'v14',
     word: 'Paradox',
-    category: 'riddles',
+    category: 'jokes',
     meaning: 'A statement or puzzle that seems to contradict itself, but may contain a surprising truth.',
     translations: {
       Spanish: 'Paradoja: Declaración o enigma que parece contradecirse a sí mismo, pero puede encerrar una verdad sorprendente.',

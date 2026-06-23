@@ -22,7 +22,7 @@ const INITIAL_MY_PROFILE: UserProfile = {
   displayName: 'Future Scientist 🚀',
   avatarUrl: '🦉',
   bio: 'I love exploring deep ocean mysteries, doing cool paper origami, and learning mind-boggling trivia!',
-  favoriteTopic: 'science-space',
+  favoriteTopic: 'science-facts',
   xpPoints: 120,
   badges: ['Early Explorer 📜'],
   addedVideos: [
@@ -31,7 +31,7 @@ const INITIAL_MY_PROFILE: UserProfile = {
       title: 'Solar System 101 | National Geographic Kids',
       youtubeId: 'libKVRa01L8',
       category: 'education',
-      subcategory: 'science-space',
+      subcategory: 'science-facts',
       description: 'Check out the amazing planets orbiting our sun, from scorching Mercury to icy Neptune!',
       addedBy: 'Future Scientist 🚀',
       createdAt: new Date().toISOString()
