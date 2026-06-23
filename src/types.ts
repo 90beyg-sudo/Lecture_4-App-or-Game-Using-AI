@@ -59,6 +59,8 @@ export interface UserProfile {
   unlockedItems?: string[]; // Accessory item IDs that the kid bought
   equippedItems?: string[]; // Accessory item IDs active on the pet
   claimedChests?: string[]; // Adventure trail chest IDs claimed
+  email?: string; // Authenticated user email
+  age?: number; // Verified age of youth explorer
 }
 
 export interface FriendProfile {

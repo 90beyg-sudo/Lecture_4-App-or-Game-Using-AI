@@ -143,10 +143,10 @@ export const CategoryHub: React.FC<CategoryHubProps> = ({
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 max-w-3xl relative z-10">
           <div>
             <span className="bg-white/20 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              🚀 Youth Knowledge Hub & Feed
+              🚀 Welcome back, {currentProfile.displayName}! Ready to earn more Star Coins?
             </span>
             <h2 className="text-2xl md:text-3.5xl font-black mt-2 tracking-tight leading-none text-white">
-              What do you want to learn & share details about today?
+              What do you want to learn & share about today?
             </h2>
             <p className="text-xs md:text-sm text-sky-50 mt-2 max-w-xl font-medium leading-relaxed">
               Explore safe, curated videos across science, crafts, and animal biology. Click any stream, play fun quizzes, and pin things to your personal Facebook-style timeline to share with classmates!

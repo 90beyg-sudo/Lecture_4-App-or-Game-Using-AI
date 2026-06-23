@@ -224,6 +224,10 @@ export const MascotWardrobe: React.FC<MascotWardrobeProps> = ({
             )}
           </div>
 
+          <div className="text-xs font-extrabold text-orange-800/90 bg-orange-50/70 px-3 py-1.5 rounded-full border border-orange-200 mt-1.5 z-10" id="pet-ownership-badge">
+            🐾 {currentPetName} the Companion belongs to {profile.displayName}
+          </div>
+
           {/* ACTIVE MASCOT LIVE CANVAS VIEW */}
           <div className="my-6 relative flex items-center justify-center w-48 h-48 bg-white border border-slate-150 rounded-full shadow-inner transform hover:scale-102 transition duration-300">
             {/* Active pet animation halo */}

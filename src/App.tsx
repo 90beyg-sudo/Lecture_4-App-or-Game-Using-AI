@@ -15,6 +15,7 @@ import { ReadingCorner } from './components/ReadingCorner';
 import { MascotWardrobe } from './components/MascotWardrobe';
 import { AdventureTrail } from './components/AdventureTrail';
 import { MiniGames } from './components/MiniGames';
+import { AuthScreen } from './components/AuthScreen';
 
 // Default pre-populated, kid-pleasant profile for first-time loaders
 const INITIAL_MY_PROFILE: UserProfile = {
@@ -75,6 +76,18 @@ export default function App() {
   // Global XP notification state
   const [xpNotification, setXpNotification] = useState<{ show: boolean; msg: string; amt: number } | null>(null);
 
+  // Authenticated state (null means loading checked state, false means unauthenticated)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+
+  const handleLogout = () => {
+    localStorage.removeItem('spacehub_session_active');
+    localStorage.removeItem('kidtube_my_profile');
+    setIsAuthenticated(false);
+    setMyProfile(INITIAL_MY_PROFILE);
+    setFriendProfile(null);
+    setActiveTab('streams');
+  };
+
   // Dynamic Kid Social Interactive Hub Branding Name Options
   const BRANDING_OPTIONS = [
     { id: 'spacehub', name: 'SPACE-HUB', tag: 'Interactive Space, Science & Shared Profile Base 🚀', emoji: '🚀', bg: 'bg-purple-600', textColor: 'text-purple-650', hoverBg: 'hover:bg-purple-50/50' },
@@ -103,16 +116,20 @@ export default function App() {
 
   // Load from LocalStorage and coordinate URL parameters on mount
   useEffect(() => {
-    // 1. Load active profile
+    // 1. Load active authenticated profile
     const savedMe = localStorage.getItem('kidtube_my_profile');
-    if (savedMe) {
+    const savedActive = localStorage.getItem('spacehub_session_active');
+    
+    if (savedMe && savedActive === 'true') {
       try {
         setMyProfile(JSON.parse(savedMe));
+        setIsAuthenticated(true);
       } catch (e) {
         console.error('Failed to parse my profile from storage:', e);
+        setIsAuthenticated(false);
       }
     } else {
-      localStorage.setItem('kidtube_my_profile', JSON.stringify(INITIAL_MY_PROFILE));
+      setIsAuthenticated(false);
     }
 
     // 2. Load stored friends snapshot
@@ -286,6 +303,28 @@ export default function App() {
   // Extract list of all custom shelf-videos so they appear blended inside Category streams
   const customVideosInStreams = myProfile.addedVideos;
 
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-slate-200" id="auth-loading-screen">
+        <div className="w-12 h-12 border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin"></div>
+        <p className="mt-4 font-black tracking-widest text-[10px] text-indigo-400 uppercase">Aligning Cosmic Shields...</p>
+      </div>
+    );
+  }
+
+  if (isAuthenticated === false) {
+    return (
+      <AuthScreen 
+        onLoginSuccess={(profile) => {
+          setMyProfile(profile);
+          localStorage.setItem('kidtube_my_profile', JSON.stringify(profile));
+          localStorage.setItem('spacehub_session_active', 'true');
+          setIsAuthenticated(true);
+        }} 
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#F0F2F5] flex flex-col font-sans antialiased text-slate-705" id="youth-kids-applet-root">
       
@@ -394,6 +433,16 @@ export default function App() {
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-xs font-bold transition shadow-sm hover:shadow-md cursor-pointer hidden md:flex items-center gap-1.5"
           >
             <GraduationCap size={14} /> Knowledge Streams
+          </button>
+
+          {/* Secure Logout action */}
+          <button
+            id="header-logout-btn"
+            onClick={handleLogout}
+            className="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-full text-xs font-bold transition cursor-pointer flex items-center gap-1 transform active:scale-95 duration-100 border-0"
+            title="Log out of SpaceHub"
+          >
+            🚪 Sign Out
           </button>
         </div>
       </header>

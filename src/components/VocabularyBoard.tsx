@@ -167,7 +167,10 @@ export const VocabularyBoard: React.FC<VocabularyBoardProps> = ({
                 Level {Math.floor((profile.xpPoints) / 100) + 1} Scholar
               </span>
             </h2>
-            <p className="text-xs text-slate-500 font-medium">Learn spelling, pronunciation and meanings from stream topics!</p>
+            <p className="text-xs text-indigo-600 font-black mt-1">
+              ✨ {profile.displayName}'s Favorite Language: {targetLang}
+            </p>
+            <p className="text-[11px] text-slate-500 font-medium mt-0.5">Learn spelling, pronunciation and meanings from stream topics!</p>
           </div>
         </div>
 
